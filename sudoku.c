@@ -54,7 +54,7 @@ List* get_adj_nodes(Node* n){
 	
 	for (int k = 1 ; k <= 9 ; k++){
 		Node *nodo = createNode();
-		nodo->sudo[0][0] = k;
+		nodo->sudo[9][9] = k;
 		pushFront(list, nodo);
 	}
 	
