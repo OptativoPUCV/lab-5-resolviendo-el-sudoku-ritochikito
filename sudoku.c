@@ -55,7 +55,7 @@ List* get_adj_nodes(Node* n){
 	pushBack(list, n);
 	for (int k = 1 ; k <= 9 ; k++){
 		Node *nodo = createNode();
-		nodo->sudo[0][0] = k;
+		nodo->sudo[9][9] = k;
 		pushBack(list, nodo);
 	}
 	
