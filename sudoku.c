@@ -95,15 +95,15 @@ List *get_adj_nodes(Node *n) {
         for (int j = 1; j <= 9; j++) {
           Node *nodo = copy(n);
           nodo->sudo[k][i] = k;
-          if (is_valid(nodo))
+          if (is_valid(nodo)) {
             pushBack(list, nodo);
+          }
         }
       }
     }
   }
-}
 
-return list;
+  return list;
 }
 
 int is_final(Node *n) { return 0; }
