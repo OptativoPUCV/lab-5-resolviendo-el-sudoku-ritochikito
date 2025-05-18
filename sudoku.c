@@ -93,12 +93,11 @@ List *get_adj_nodes(Node *n) {
     for (int i = 0; i <= 8; i++) {
       if (n->sudo[k][i] == 0) {
         for (int j = 1; j <= 9; j++) {
-          n->sudo[k][i] = j;
-          if (is_valid(n)) {
-            Node *nodo = copy(n);
+          Node *nodo = copy(n);
+          nodo->sudo[k][i] = j;
+          if (is_valid(nodo)) {
             pushBack(list, nodo);
           }
-          n->sudo[k][i] = 0;
         }
       }
     }
