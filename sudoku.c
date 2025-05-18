@@ -117,54 +117,27 @@ int is_final(Node *n) {
 }
 
 Node *DFS(Node *initial, int *cont) {
-  // Stack *pila = createStack();
-  // push(pila, initial);
+  Stack *pila = createStack();
+  push(pila, initial);
 
-  // while (pila != NULL) {
-  //   Node *nodo = (Node *)top(pila);
-  //   pop(pila);
-
-  //   (*cont)++;
-
-  //   if (is_final(nodo))
-  //     return nodo;
-  //   List *lista = get_adj_nodes(nodo);
-  //   while (!is_empty(lista)) {
-  //     Node *aux = first(lista);
-  //     push(pila, aux);
-  //     popFront(lista);
-  //   }
-  //   free(nodo);
-  // }
-
-  // return NULL;
-
-  *cont = 0;
-  Stack *S = createStack();
-  push(S, copy(n)); // Agregamos el nodo inicial a la pila
-
-  while (!is_empty(S)) {
-    Node *current =
-        (Node *)last(S); // Recuperamos el último nodo sin eliminarlo
-    pop(S);              // Eliminamos el último nodo de la pila
+  while (pila != NULL) {
+    Node *nodo = (Node *)top(pila);
+    pop(pila);
 
     (*cont)++;
 
-    if (is_final(current))
-      return current; // Si es una solución, la retornamos
-
-    List *adj_nodes = get_adj_nodes(current);
-    void *adj;
-    while ((adj = front(adj_nodes)) !=
-           NULL) {         // Iteramos sobre la lista de adyacentes
-      push(S, adj);        // Agregamos cada nodo al stack
-      popFront(adj_nodes); // Eliminamos el nodo de la lista
+    if (is_final(nodo))
+      return nodo;
+    List *lista = get_adj_nodes(nodo);
+    while (!is_empty(lista)) {
+      Node *aux = first(lista);
+      push(pila, aux);
+      popFront(lista);
     }
-
-    free(current); // Liberamos memoria del nodo procesado
+    free(nodo);
   }
 
-  return NULL; // No se encontró solución
+  return NULL;
 }
 
 /*
