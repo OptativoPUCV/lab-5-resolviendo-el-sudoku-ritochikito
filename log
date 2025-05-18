@@ -276,3 +276,14 @@ sudoku.c:169:1: error: expected identifier or ‘(’ before ‘}’ token
   169 | }
       | ^
 5262118
+Sun 18 May 2025 06:22:55 PM UTC: 
+ sudoku.c | 1 -
+ 1 file changed, 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:144:16: error: ‘n’ undeclared (first use in this function)
+  144 |   push(S, copy(n)); // Agregamos el nodo inicial a la pila
+      |                ^
+sudoku.c:144:16: note: each undeclared identifier is reported only once for each function it appears in
+dd51cbe

@@ -166,7 +166,6 @@ Node *DFS(Node *initial, int *cont) {
 
   return NULL; // No se encontró solución
 }
-}
 
 /*
 int main( int argc, char *argv[] ){
