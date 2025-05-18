@@ -261,3 +261,18 @@ Sun 18 May 2025 06:21:20 PM UTC:
  1 file changed, 19 insertions(+), 19 deletions(-)
  tests:  0|0
 9b67189
+Sun 18 May 2025 06:22:43 PM UTC: 
+ sudoku.c | 56 ++++++++++++++++++++++++++++++++++++++++++--------------
+ 1 file changed, 42 insertions(+), 14 deletions(-)
+Compilation failed
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:144:16: error: ‘n’ undeclared (first use in this function)
+  144 |   push(S, copy(n)); // Agregamos el nodo inicial a la pila
+      |                ^
+sudoku.c:144:16: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c: At top level:
+sudoku.c:169:1: error: expected identifier or ‘(’ before ‘}’ token
+  169 | }
+      | ^
+5262118
