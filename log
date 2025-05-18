@@ -313,3 +313,8 @@ sudoku.c:133:42: note: ...this statement, but the latter is misleadingly indente
   133 |     while ((adj = front(lista)) != NULL)){
       |                                          ^
 dd2018a
+Sun 18 May 2025 07:21:18 PM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+864f583
