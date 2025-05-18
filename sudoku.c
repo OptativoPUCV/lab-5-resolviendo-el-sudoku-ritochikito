@@ -124,7 +124,7 @@ Node *DFS(Node *initial, int *cont) {
     Node *nodo = top(pila);
     pop(pila);
 
-    cont++;
+    (*cont)++;
 
     if (is_final(nodo))
       return nodo;
