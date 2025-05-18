@@ -133,12 +133,6 @@ Node *DFS(Node *initial, int *cont) {
       return nodo;
 
     List *lista = get_adj_nodes(nodo);
-
-    if (is_empty(lista)) {
-      free(nodo);
-      return NULL;
-    }
-
     while (!is_empty(lista)) {
       Node *aux = first(lista);
       push(pila, aux);
