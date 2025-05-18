@@ -129,11 +129,16 @@ Node *DFS(Node *initial, int *cont) {
     if (is_final(nodo))
       return nodo;
     List *lista = get_adj_nodes(nodo);
-    while (!is_empty(lista)) {
-      Node *aux = first(lista);
-      push(pila, aux);
-      popFront(lista);
-    }
+    void *adj;
+    while ((adj = front(lista)) != NULL)){
+        push(pila, adj);
+        popFront(lista);
+      }
+    // while (!is_empty(lista)) {
+    //   Node *aux = first(lista);
+    //   push(pila, aux);
+    //   popFront(lista);
+    // }
     free(nodo);
   }
 

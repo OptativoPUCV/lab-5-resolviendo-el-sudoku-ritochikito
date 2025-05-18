@@ -297,3 +297,19 @@ Sun 18 May 2025 07:17:21 PM UTC:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 f7841aa
+Sun 18 May 2025 07:21:02 PM UTC: 
+ sudoku.c | 11 ++++++++---
+ 1 file changed, 8 insertions(+), 3 deletions(-)
+Compilation failed
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:133:41: error: expected statement before ‘)’ token
+  133 |     while ((adj = front(lista)) != NULL)){
+      |                                         ^
+sudoku.c:133:5: warning: this ‘while’ clause does not guard... [-Wmisleading-indentation]
+  133 |     while ((adj = front(lista)) != NULL)){
+      |     ^~~~~
+sudoku.c:133:42: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘while’
+  133 |     while ((adj = front(lista)) != NULL)){
+      |                                          ^
+dd2018a
