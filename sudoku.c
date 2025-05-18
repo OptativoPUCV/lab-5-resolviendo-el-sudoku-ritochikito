@@ -116,7 +116,29 @@ int is_final(Node *n) {
   return 1;
 }
 
-Node *DFS(Node *initial, int *cont) { return NULL; }
+Node *DFS(Node *initial, int *cont) {
+  Stack *pila = createStack();
+  push(pila, initial);
+
+  while (pila != NULL) {
+    Node *nodo = top(pila);
+    pop(pila);
+
+    cont++;
+
+    if (is_final(nodo))
+      return nodo;
+    List *lista = get_adj_nodes(nodo);
+    while (!is_empty(lista)) {
+      Node *aux = first(lista);
+      push(pila, aux);
+      popFront(lista);
+    }
+    free(nodo);
+  }
+
+  return NULL;
+}
 
 /*
 int main( int argc, char *argv[] ){
