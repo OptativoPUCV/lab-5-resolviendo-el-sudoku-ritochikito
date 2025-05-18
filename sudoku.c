@@ -43,6 +43,8 @@ void print_node(Node *n) {
 }
 
 int is_valid(Node *n) {
+
+  // Verificacion por filas
   for (int i = 0; i < 9; i++) {
     int fila[10] = {0};
     for (int j = 0; j < 9; j++) {
@@ -53,6 +55,8 @@ int is_valid(Node *n) {
       }
     }
   }
+
+  // Verificacion por columnas
   for (int i = 0; i < 9; i++) {
     int col[10] = {0};
     for (int j = 0; j < 9; j++) {
@@ -63,6 +67,8 @@ int is_valid(Node *n) {
       }
     }
   }
+
+  // Verificacion por submatriz
   for (int i = 0; i < 9; i += 3) {
     for (int j = 0; j < 9; j += 3) {
       int test[10] = {0};
@@ -89,7 +95,8 @@ List *get_adj_nodes(Node *n) {
         for (int j = 1; j <= 9; j++) {
           Node *nodo = copy(n);
           nodo->sudo[k][i] = j;
-          pushBack(list, nodo);
+          if (is_valid(nodo))
+            pushBack(list, nodo);
         }
       }
     }
@@ -105,12 +112,12 @@ Node *DFS(Node *initial, int *cont) { return NULL; }
 /*
 int main( int argc, char *argv[] ){
 
-  Node* initial= read_file("s12a.txt");;
+        Node* initial= read_file("s12a.txt");;
 
-  int cont=0;
-  Node* final = DFS(initial, &cont);
-  printf("iterations:%d\n",cont);
-  print_node(final);
+        int cont=0;
+        Node* final = DFS(initial, &cont);
+        printf("iterations:%d\n",cont);
+        print_node(final);
 
-  return 0;
+        return 0;
 }*/
