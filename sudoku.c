@@ -97,8 +97,11 @@ List *get_adj_nodes(Node *n) {
           nodo->sudo[k][i] = j;
           if (is_valid(nodo)) {
             pushBack(list, nodo);
+          } else {
+            free(nodo);
           }
         }
+        return list;
       }
     }
   }
