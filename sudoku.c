@@ -98,7 +98,7 @@ List *get_adj_nodes(Node *n) {
           if (is_valid(nodo)) {
             pushBack(list, nodo);
           }
-		free(nodo);
+          free(nodo);
         }
       }
     }
@@ -118,26 +118,26 @@ int is_final(Node *n) {
 }
 
 Node *DFS(Node *initial, int *cont) {
-  Stack *pila = createStack();
-  push(pila, initial);
+  // Stack *pila = createStack();
+  // push(pila, initial);
 
-  while (!is_empty(pila)) {
-    Node *nodo = (Node *)top(pila);
-    pop(pila);
+  // while (!is_empty(pila)) {
+  //   Node *nodo = (Node *)top(pila);
+  //   pop(pila);
 
-    (*cont)++;
+  //   (*cont)++;
 
-    if (is_final(nodo))
-      return nodo;
+  //   if (is_final(nodo))
+  //     return nodo;
 
-    List *lista = get_adj_nodes(nodo);
-    while (!is_empty(lista)) {
-      Node *aux = first(lista);
-      push(pila, aux);
-      popFront(lista);
-    }
-    free(nodo);
-  }
+  //   List *lista = get_adj_nodes(nodo);
+  //   while (!is_empty(lista)) {
+  //     Node *aux = first(lista);
+  //     push(pila, aux);
+  //     popFront(lista);
+  //   }
+  //   free(nodo);
+  // }
 
   return NULL;
 }
