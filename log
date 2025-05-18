@@ -97,3 +97,30 @@ Sun 18 May 2025 04:30:02 PM UTC:
  tests:  2|4
 total_score: 15/70
 e786afc
+Sun 18 May 2025 04:48:40 PM UTC: 
+ sudoku.c | 25 +++++++++++++++++++++++++
+ 1 file changed, 25 insertions(+)
+Compilation failed
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:72:52: error: expected ‘]’ before ‘)’ token
+   72 |                         if (test[n->sudo[i][j] == 1)
+      |                                                    ^
+      |                                                    ]
+sudoku.c:75:43: error: expected ‘]’ before ‘;’ token
+   75 |                     test[n->sudo[i][j] = 1;
+      |                                           ^
+      |                                           ]
+sudoku.c:75:25: error: value computed is not used [-Werror=unused-value]
+   75 |                     test[n->sudo[i][j] = 1;
+      |                     ~~~~^~~~~~~~~~~~~~~~~~~
+   76 |         }
+      |         ~                
+sudoku.c:75:44: error: expected ‘;’ before ‘}’ token
+   75 |                     test[n->sudo[i][j] = 1;
+      |                                            ^
+      |                                            ;
+   76 |         }
+      |         ~                                   
+cc1: all warnings being treated as errors
+4dcf3e4
