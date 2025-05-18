@@ -72,7 +72,7 @@ int is_valid(Node *n) {
             if (test[n->sudo[i][j]] == 1)
               return 0;
           }
-        test[n->sudo[i][j] = 1;
+          test[n->sudo[i][j]] = 1;
         }
       }
     }
