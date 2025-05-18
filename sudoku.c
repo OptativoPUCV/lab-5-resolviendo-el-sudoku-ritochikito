@@ -120,60 +120,28 @@ int is_final(Node *n) {
 }
 
 Node *DFS(Node *initial, int *cont) {
-
-  *cont = 0;
   Stack *pila = createStack();
-  push(pila,
-       copy(initial)); // Hacemos una copia para evitar modificar el original
+  push(pila, initial);
 
   while (!is_empty(pila)) {
     Node *nodo = (Node *)top(pila);
     pop(pila);
+
     (*cont)++;
 
     if (is_final(nodo))
-      return nodo; // Si encontramos la solución, la retornamos
+      return nodo;
 
     List *lista = get_adj_nodes(nodo);
-    if (is_empty(lista)) { // Si no hay nodos válidos, liberamos y continuamos
-      free(nodo);
-      continue;
-    }
-
-    while (!is_empty(lista)) { // Procesamos todos los nodos adyacentes
+    while (!is_empty(lista)) {
       Node *aux = first(lista);
-      push(pila,
-           copy(aux)); // Se usa `copy(aux)` para evitar referencias incorrectas
+      push(pila, aux);
       popFront(lista);
     }
-
-    free(nodo); // Liberamos el nodo procesado
+    free(nodo);
   }
 
-  return NULL; // Retornamos NULL si no encontramos solución
-
-  // Stack *pila = createStack();
-  // push(pila, initial);
-
-  // while (!is_empty(pila)) {
-  //   Node *nodo = (Node *)top(pila);
-  //   pop(pila);
-
-  //   (*cont)++;
-
-  //   if (is_final(nodo))
-  //     return nodo;
-
-  //   List *lista = get_adj_nodes(nodo);
-  //   while (!is_empty(lista)) {
-  //     Node *aux = first(lista);
-  //     push(pila, aux);
-  //     popFront(lista);
-  //   }
-  //   free(nodo);
-  // }
-
-  // return NULL;
+  return NULL;
 }
 
 /*
