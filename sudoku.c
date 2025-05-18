@@ -133,7 +133,7 @@ Node *DFS(Node *initial, int *cont) {
       return nodo;
 
     List *lista = get_adj_nodes(nodo);
-    while (!is_empty(lista)) {
+    while (lista != NULL) {
       Node *aux = first(lista);
       push(pila, aux);
       popFront(lista);
