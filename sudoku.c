@@ -136,7 +136,7 @@ Node *DFS(Node *initial, int *cont) {
 
     if (is_empty(lista)) {
       free(nodo);
-      continue;
+      return NULL;
     }
 
     while (!is_empty(lista)) {
