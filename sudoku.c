@@ -130,6 +130,7 @@ Node *DFS(Node *initial, int *cont) {
     (*cont)++;
 
     if (is_final(nodo)) {
+      printf("Hay solucion");
       return nodo;
     } else {
       List *lista = get_adj_nodes(nodo);
