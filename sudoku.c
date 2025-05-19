@@ -129,8 +129,9 @@ Node *DFS(Node *initial, int *cont) {
 
     (*cont)++;
 
-    if (is_final(nodo))
+    if (is_final(nodo)) {
       return nodo;
+    }
 
     List *lista = get_adj_nodes(nodo);
     while (!is_empty(lista)) {
