@@ -57,16 +57,16 @@ int is_valid(Node *n) {
   }
 
   // Verificacion por columnas
-  // for (int i = 0; i < 9; i++) {
-  //   int col[10] = {0};
-  //   for (int j = 0; j < 9; j++) {
-  //     if (n->sudo[i][j] != 0) {
-  //       if (col[n->sudo[i][j]] == 1)
-  //         return 0;
-  //       col[n->sudo[i][j]] = 1;
-  //     }
-  //   }
-  // }
+  for (int i = 0; i < 9; i++) {
+    int col[10] = {0};
+    for (int j = 0; j < 9; j++) {
+      if (n->sudo[j][i] != 0) {
+        if (col[n->sudo[j][i]] == 1)
+          return 0;
+        col[n->sudo[j][i]] = 1;
+      }
+    }
+  }
 
   // Verificacion por submatriz
   for (int i = 0; i < 9; i += 3) {
