@@ -146,15 +146,15 @@ Node *DFS(Node *initial, int *cont) {
   return NULL;
 }
 
-/*
-int main( int argc, char *argv[] ){
+int main(int argc, char *argv[]) {
 
-        Node* initial= read_file("s12a.txt");;
+  Node *initial = read_file("s12a.txt");
+  ;
 
-        int cont=0;
-        Node* final = DFS(initial, &cont);
-        printf("iterations:%d\n",cont);
-        print_node(final);
+  int cont = 0;
+  Node *final = DFS(initial, &cont);
+  printf("iterations:%d\n", cont);
+  print_node(final);
 
-        return 0;
-}*/
+  return 0;
+}
