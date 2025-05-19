@@ -122,9 +122,10 @@ int is_final(Node *n) {
 Node *DFS(Node *initial, int *cont) {
   Stack *pila = createStack();
   push(pila, initial);
+  Node *nodo = createNode();
 
   while (!is_empty(pila)) {
-    Node *nodo = (Node *)top(pila);
+    nodo = top(pila);
     pop(pila);
 
     (*cont)++;
