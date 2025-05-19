@@ -130,9 +130,11 @@ Node *DFS(Node *initial, int *cont) {
 
     (*cont)++;
 
-    if (is_final(nodo) && is_valid(nodo)) {
-      printf("Hay solucion");
-      return nodo;
+    if (is_final(nodo)) {
+      if (is_valid(nodo)) {
+        printf("Hay solucion");
+        return nodo;
+      }
     } else {
       List *lista = get_adj_nodes(nodo);
       while (!is_empty(lista)) {
