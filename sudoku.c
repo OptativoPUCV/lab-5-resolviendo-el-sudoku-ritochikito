@@ -142,6 +142,7 @@ Node *DFS(Node *initial, int *cont) {
     }
   }
 
+  printf("No hay solucion");
   return NULL;
 }
 
